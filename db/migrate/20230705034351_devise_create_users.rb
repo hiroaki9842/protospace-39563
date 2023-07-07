@@ -11,13 +11,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.text :occupation,null:false
       t.text :position,null:false
 
-    validates :email, presence: true
-    validates :encrypted_password, presence: true
-    validates :name, presence: true
-    validates :profile, presence: true
-    validates :occupation, presence: true
-    validates :position, presence: true
-
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
