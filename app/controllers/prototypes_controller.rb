@@ -1,7 +1,7 @@
 class PrototypesController < ApplicationController
-  before_action :authenticate_user!,only: [:edit,:new,:update]##update追加
+  before_action :authenticate_user!,only: [:edit,:new,:update]
   before_action :move_to_index, except: [:index,:new,:show]
-  before_action :set_prototype, only: [:edit, :update]##
+  before_action :set_prototype, only: [:edit, :update]
 
   def index
     @prototypes = Prototype.all
@@ -30,7 +30,7 @@ class PrototypesController < ApplicationController
 
   def edit
     @prototype = Prototype.find(params[:id])
-    if current_user != @prototype.user##追加
+    if current_user != @prototype.user
       redirect_to root_path
     end
   end
@@ -61,7 +61,7 @@ class PrototypesController < ApplicationController
     end
   end
 
-  def set_prototype##追加
+  def set_prototype
     @prototype = Prototype.find(params[:id])
   end
 end
